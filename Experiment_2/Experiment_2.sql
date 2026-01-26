@@ -33,5 +33,6 @@ select product, sum(quantity) as total_quantity from orders group by product;
 select product, sum(price) as total_sales from orders group by product having sum(price) > 50000;
 
 -- Step 6 --
--- select product, sum(price) from orders where sum(price) > 50000 group by product;
+select product, sum(price) from orders where sum(price) > 50000 group by product;
 select product, sum(price) from orders group by product having sum(price) > 50000;
+
