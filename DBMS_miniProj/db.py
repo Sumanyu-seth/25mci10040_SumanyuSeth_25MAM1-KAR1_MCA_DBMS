@@ -3,7 +3,7 @@ import mysql.connector
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
-    "password": "Sumanyu#seth",
+    "password": "",
     "database": "crimedb",
     "raise_on_warnings": True,
     "autocommit": False
