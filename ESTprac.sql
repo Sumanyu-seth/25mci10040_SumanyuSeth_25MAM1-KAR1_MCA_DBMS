@@ -52,14 +52,14 @@ INSERT INTO Tbl_Supply_logs VALUES
 
 
 
-ALTER TABLE Tbl_Products ADD sup_id INT;
-ALTER TABLE Tbl_Products ADD FOREIGN KEY (sup_id) REFERENCES Tbl_Suppliers(sup_id);
+ALTER TABLE Tbl_Products add sup_id INT;
+ALTER TABLE Tbl_Products add foreign key (sup_id) REFERENCES Tbl_Suppliers(sup_id);
 
 
-SELECT s.sup_name, p.prod_name, o.qty
-FROM Tbl_Orders o
-JOIN Tbl_Products p ON o.prod_id = p.prod_id
-JOIN Tbl_Suppliers s ON p.sup_id = s.sup_id;
+select s.sup_name, p.prod_name, o.qty
+from Tbl_Orders o
+join Tbl_Products p on o.prod_id = p.prod_id
+join Tbl_Suppliers s on p.sup_id = s.sup_id;
 
 
 Create or replace function update_product_stock()
