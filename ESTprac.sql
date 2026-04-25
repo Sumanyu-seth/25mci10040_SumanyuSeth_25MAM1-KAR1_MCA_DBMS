@@ -61,6 +61,11 @@ from Tbl_Orders o
 join Tbl_Products p on o.prod_id = p.prod_id
 join Tbl_Suppliers s on p.sup_id = s.sup_id;
 
+SELECT s.sup_name,p.prod_name,o.qty
+FROM Tbl_Orders o
+JOIN Tbl_Products p 
+ON o.prod_id = p.prod_id
+CROSS JOIN Tbl_Suppliers s;
 
 Create or replace function update_product_stock()
 RETURNS trigger AS $$
@@ -77,9 +82,6 @@ after insert on Tbl_Orders
 FOR EACH ROW
 Execute function update_product_stock();
 
-SELECT s.sup_name,p.prod_name,o.qty
-FROM Tbl_Orders o
-JOIN Tbl_Products p 
-ON o.prod_id = p.prod_id
-CROSS JOIN Tbl_Suppliers s;
 
+INSERT INTO Tbl_Orders VALUES (9004, 501, 104, '2026-04-25', 5);
+select * from Tbl_Orders;
